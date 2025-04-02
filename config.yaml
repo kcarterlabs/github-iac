@@ -1,3 +1,7 @@
 this: 
   id: #removed as to not commit secrets
   installation_id: #removed as to not commit secrets
+  repository:
+    - name: "github-iac"
+      description: "Github IAC Repository"
+      visibility: "public"
