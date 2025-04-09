@@ -11,3 +11,6 @@ this:
     - name: "unifi-webhook-infra"
       description: "ecr repo for unifi webhook infra"
       visibility: "public"
+    - name: "github-token-app"
+      description: "python app for authing terraform workloads on tokens"
+      visibility: public

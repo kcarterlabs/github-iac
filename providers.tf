@@ -20,3 +20,7 @@ terraform {
 
 }
 
+provider "github" {
+  token        = var.github_token
+  owner        = "kcarterlabs"  # <-- This must be your GitHub organization
+}
