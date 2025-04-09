@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.10.0"
   required_providers {
     github = {
       source  = "integrations/github"
@@ -9,17 +10,13 @@ terraform {
       version = "5.88.0"
     }
   }
-}
+    backend "remote" {
+    organization = "kcarterlabs"
 
-provider "github" {
-  owner = "kcarterlabs"
-  app_auth {
-    id              = local.github_id.value
-    installation_id = local.github_installation_id.value
-    pem_file        = local.github_app_pem.value
+    workspaces {
+      name = "github-iac"
+    }
   }
+
 }
 
-provider "aws" {
-  region = "us-west-2"
-}
