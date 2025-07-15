@@ -14,3 +14,18 @@ this:
     - name: "github-token-app"
       description: "python app for authing terraform workloads on tokens"
       visibility: public
+    - name: "proxmox-scripts"
+      description: "repository for proxmox management"
+      visibility: public
+    - name: "argocd-infra"
+      description: "repository for argocd resources"
+      visibility: public
+    - name: "python-projects"
+      description: "repository for my python projects"
+      visibility: public
+    - name: "dinner-menu"
+      description: "source code for the dinner-menu project"
+      visibility: public
+    - name: "bind"
+      description: "source code for bind dns container application"
+      visibility: private
