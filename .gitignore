@@ -3,3 +3,6 @@
 terraform.tfstate
 terraform.tfstate.backup
 terraform.tfstate*
+
+# GitHub App private keys. The one Terraform uses is read from SSM, not disk.
+*.pem
