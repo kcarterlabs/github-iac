@@ -4,7 +4,7 @@ resource "github_repository" "this" {
   name        = each.key
   description = each.value.description
 
-  visibility         = "public"
+  visibility         = each.value.private ? "private" : "public"
   allow_squash_merge = true
 
 }
@@ -16,7 +16,10 @@ resource "github_team" "dingusoars" {
 
 resource "github_repository_collaborators" "this" {
   for_each = local.repositories_map
-  repository = each.key
+  # A reference, not each.key: it makes Terraform create the repository
+  # before its collaborators. With a plain string the two ran in parallel, so
+  # the first apply of a new repo failed and only a second apply succeeded.
+  repository = github_repository.this[each.key].name
 
   user {
     permission = "admin"
