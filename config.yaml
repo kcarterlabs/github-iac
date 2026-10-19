@@ -28,4 +28,31 @@ this:
       visibility: public
     - name: "bind"
       description: "source code for bind dns container application"
+      visibility: public
+    - name: "gen-ai-rag"
+      description: "source code for gen ai rag project"
+      visibility: public
+    - name: "atlas-mongodb"
+      description: "source code for atlas mongodb project"
+      visibility: public
+    - name: "arr-stack"
+      description: "Ansible for the *arr media-automation stack on the TrueNAS NAS"
+      visibility: private
+    - name: "grafana"
+      description: "Homelab observability stack (Grafana, Loki, Tempo, Prometheus) and fleet Alloy agents, deployed with Ansible"
+      visibility: private
+    - name: "homarr"
+      description: "Ansible for the Homarr homelab start page on the TrueNAS NAS"
+      visibility: private
+    - name: "immich"
+      description: "Ansible for Immich photo backup on the TrueNAS NAS"
+      visibility: private
+    - name: "qbitorrent"
+      description: "Ansible for qBittorrent behind PIA (gluetun) on the Gol-D-Roger VM"
+      visibility: private
+    - name: "selfhost"
+      description: "Ansible for self-hosted apps (FreshRSS, SearXNG) on the TrueNAS NAS"
+      visibility: private
+    - name: "traefik"
+      description: "Ansible for the Traefik reverse proxy on the homelab"
       visibility: private
