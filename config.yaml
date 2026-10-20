@@ -56,3 +56,6 @@ this:
     - name: "traefik"
       description: "Ansible for the Traefik reverse proxy on the homelab"
       visibility: private
+    - name: "lan-cache"
+      description: "Ansible for the lancache game download cache and LAN DNS on the lan-cache VM"
+      visibility: private
