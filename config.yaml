@@ -16,7 +16,7 @@ this:
       visibility: public
     - name: "proxmox-scripts"
       description: "repository for proxmox management"
-      visibility: public
+      visibility: private
     - name: "argocd-infra"
       description: "repository for argocd resources"
       visibility: public
