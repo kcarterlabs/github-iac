@@ -59,3 +59,11 @@ this:
     - name: "lan-cache"
       description: "Ansible for the lancache game download cache and LAN DNS on the lan-cache VM"
       visibility: private
+    - name: "k3s"
+      description: "Ansible for the homelab K3s cluster (servers on the minis, Argo CD), and the manifests Argo CD reconciles"
+      visibility: private
+      # Read-only keys. Argo CD's: ~/Code/k3s `make secrets` wrote
+      # argocd-deploy-key.pub (2026-10-21); its private half is vaulted there.
+      deploy_keys:
+        - title: "argocd (k3s cluster)"
+          key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLw28XCjwd/x7fsm5Nrz4DeFlOoAWXK82b3347GBnrm argocd@k3s (read-only deploy key)"

@@ -1,6 +1,6 @@
 resource "github_repository" "this" {
   for_each = local.repositories_map
-  
+
   name        = each.key
   description = each.value.description
 
@@ -23,11 +23,20 @@ resource "github_repository_collaborators" "this" {
 
   user {
     permission = "admin"
-    username  = "senpaikcarter"
+    username   = "senpaikcarter"
   }
 
   team {
     permission = "maintain"
-    team_id = github_team.dingusoars.id
+    team_id    = github_team.dingusoars.id
   }
+}
+
+# Read-only: a deploy key here can clone its one repository and nothing else.
+resource "github_repository_deploy_key" "this" {
+  for_each   = local.deploy_keys
+  repository = github_repository.this[each.value.repository].name
+  title      = each.value.title
+  key        = each.value.key
+  read_only  = true
 }
