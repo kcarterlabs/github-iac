@@ -67,3 +67,9 @@ this:
       deploy_keys:
         - title: "argocd (k3s cluster)"
           key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLw28XCjwd/x7fsm5Nrz4DeFlOoAWXK82b3347GBnrm argocd@k3s (read-only deploy key)"
+    - name: "pbs"
+      description: "Proxmox Backup Server configuration (Ansible)"
+      visibility: private
+    - name: "proxmox-iac"
+      description: "Terraform for Proxmox VMs (bpg/proxmox)"
+      visibility: private

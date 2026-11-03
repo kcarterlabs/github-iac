@@ -11,10 +11,12 @@ locals {
     }
   }
   # "repo/title" => key, for every deploy_keys entry (title + key) in config.yaml.
+  # Only the type and the key: GitHub stores a deploy key without its comment, so a
+  # comment in config.yaml would make every plan replace the key.
   deploy_keys = merge([
     for repo in local.config.this.repository : {
       for k in try(repo.deploy_keys, []) :
-      "${repo.name}/${k.title}" => { repository = repo.name, title = k.title, key = k.key }
+      "${repo.name}/${k.title}" => { repository = repo.name, title = k.title, key = join(" ", slice(split(" ", trimspace(k.key)), 0, 2)) }
     }
   ]...)
 
