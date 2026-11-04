@@ -73,3 +73,6 @@ this:
     - name: "proxmox-iac"
       description: "Terraform for Proxmox VMs (bpg/proxmox)"
       visibility: private
+    - name: "sandbox"
+      description: "Security lab gateway VM: nftables, DNS/DHCP, Tailscale (Ansible)"
+      visibility: private
