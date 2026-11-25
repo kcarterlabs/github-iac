@@ -76,6 +76,9 @@ this:
     - name: "pgbackup"
       description: "Ansible for the Postgres backup VM: standby, WAL archive, base backups, dumps, weekly restore test"
       visibility: private
+    - name: "obsidian-vault"
+      description: "Homelab knowledge base (Obsidian): architecture, ADRs, runbooks, labs. No secrets."
+      visibility: private
     - name: "sandbox"
       description: "Security lab gateway VM: nftables, DNS/DHCP, Tailscale (Ansible)"
       visibility: private
